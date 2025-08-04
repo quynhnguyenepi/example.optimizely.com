@@ -1,0 +1,148 @@
+
+<script type="text/javascript">
+  var s = {}; // SiteCatalyst
+  var optimizely = optimizely || [];
+
+  window.optimizely.push(['activateSiteCatalyst', {"sVariable": s}]);
+
+  // From http://www.w3schools.com/js/js_cookies.asp
+  function setCookie(c_name,value,exdays) {
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var c_value = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toUTCString());
+    document.cookie = c_name + "=" + c_value;
+  }
+</script>
+
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="google-site-verification" content="d_DgsSAHty9zSvvfysrv7sReINfmrwjp_A8REbRtayo" />
+  
+
+  
+  <!-- window.optimizely = window.optimizely || []; -->
+  
+
+  <script type="text/javascript">
+    // Testing the setCookieDomain api
+    //var optimizely = optimizely || [];
+    //optimizely.push(['setCookieDomain', 'example-local.optimizely.com']);
+  </script>
+  
+    
+
+  
+  <script type="text/javascript">
+    // testing SiteCatalyst integration
+    var s = s || {};
+    var s_alternate = s_alternate || {};
+  </script>
+
+  
+  <title>Optimizely Example</title>
+  <style>
+    #background-image {
+      background-image: url('/static/img/gervais.jpg');
+      display: inline-block;
+      height: 300px;
+      width: 500px;
+    }
+    a.reset {
+      background-color: #99EE99;
+      border: 2px solid #000;
+      padding: 10px 20px;
+      text-decoration: none;
+    }
+  </style>
+  <script type="text/javascript">
+    function deleteAllCookies() {
+      var cookies = document.cookie.split(";");
+
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        name = name.trim()
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+      }
+    }
+
+    function reset() {
+      deleteAllCookies();
+      window.location.reload(true);
+    };
+  </script>
+
+
+  
+  <script src="/static/js/jquery.js"></script>
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/static/js/example.js"></script>
+  
+</head>
+
+<body>
+<div id="content">
+<h1 id="optimizely_variation"></h1>
+<div id="navigation">
+  <a href="http://example.local/?client_id=16&optimizely_log=true">Example 1</a>
+  <a href="http://example.local/example2?client_id=16&optimizely_log=true">Example 2</a>
+  <a href="http://example.local/example3?client_id=16&optimizely_log=true">Example 3</a>
+</div>
+<h1 id="title">Instructions</h1>
+<p>To optimize this page using Optimizely, <a href="/tools">install the Bookmarklet from the tools page</a>.</p>
+
+<h1>Example</h1>
+<!-- <img src="http://i.cdn.turner.com/cnn/2010/SHOWBIZ/TV/01/15/golden.globes.top.ten/t1larg.jpg"> -->
+
+  <a class="reset" href="#" onclick="return reset();">Refresh the page (would be cool if this cleared cookies too!)</a>
+  <br /><br /><br />
+
+  <div style="text-align: left;">
+  <a href="#" onclick="optimizely.push(['trackEvent', 'sale', 100])">Click for revenue tracking</a>
+  <img
+    alt="nihongo"
+    src="https://optimizely.github.io/quynh/arctic-fox-banner.jpg"
+    style="display: block; margin: 4px 0 0 0; padding: 0;"
+  />
+</div>
+
+
+<p id="paragraph1">Mauris nunc odio, vestibulum a, dignissim vitae, sagittis in, purus. Nulla dignissim. Praesent congue augue ac elit. Nam nec velit. Integer vehicula. Sed vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris lectus magna, iaculis a, rhoncus vitae, lacinia eu, sem. Cras auctor lacus in eros. In hac habitasse platea dictumst. Ut sit amet justo vel sapien interdum dignissim. Vivamus leo. Maecenas porta nunc. Aliquam sem velit, commodo eget, porta id, molestie eu, velit. Sed vel lectus. Curabitur sed massa vitae ante fringilla varius. Proin dignissim condimentum neque. Duis luctus.</p>
+<p id="paragraph2"><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus libero magna, tristique quis, semper a, auctor nec, tellus.</b> Pellentesque id velit blandit risus consequat pharetra. Etiam odio. Fusce neque ipsum, eleifend nec, ullamcorper elementum, mattis a, neque. Integer nulla nulla, elementum ac, pellentesque at, egestas quis, sem. Etiam neque. Proin ultrices. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor dui, euismod nec, varius non, condimentum nec, nulla. Proin gravida, libero non eleifend congue, odio diam elementum magna, eget feugiat nisi velit sed arcu. Vivamus auctor scelerisque leo. Aenean ornare dapibus diam. Nulla rutrum neque ac justo. Nulla nisi mauris, congue sed, congue sit amet, sagittis sit amet, libero. Vestibulum at felis. Vivamus consequat eros dignissim enim. Etiam bibendum, urna id posuere sodales, lacus augue imperdiet metus, porttitor auctor tortor risus nec elit.</p>
+<p id="paragraph3">Fusce luctus, tellus vel lobortis gravida, sapien elit cursus nisl, sed ullamcorper velit risus vitae massa. Proin nulla. Cras laoreet varius turpis. Pellentesque nec ante in velit imperdiet consectetur. Sed condimentum, felis eu euismod venenatis, urna nibh lobortis leo, nec ornare justo lectus vitae odio. In venenatis laoreet mi. Integer volutpat nulla sit amet tortor. Duis id elit. Sed tristique scelerisque mi. Sed id enim id lectus ullamcorper convallis. Nulla commodo massa vel ipsum. Pellentesque auctor nisi ac elit. Praesent venenatis nunc eget diam.</p>
+<p id="paragraph4">Etiam vel mauris non urna tincidunt iaculis. Curabitur suscipit. Pellentesque molestie. Sed sit amet nibh ac lacus pretium facilisis. Praesent nec risus. Nunc justo purus, elementum id, scelerisque eget, faucibus nec, nisl. Aenean lacus libero, viverra in, pellentesque sit amet, eleifend eu, odio. Maecenas scelerisque viverra arcu. Proin metus risus, luctus id, molestie eu, placerat id, orci. Donec et quam. Sed ac lacus nec quam volutpat suscipit. Sed in neque vel felis suscipit mollis.</p>
+<p id="paragraph5">In sollicitudin sem a dui. Mauris posuere mauris non ante congue sollicitudin. Morbi adipiscing felis congue sem. Proin aliquam nunc et neque. Phasellus elementum lacus ut leo. Donec a lectus non est congue accumsan. Mauris nec ligula. Duis massa. Mauris tellus. Vestibulum feugiat tempor dui. Integer lacinia odio nec magna. Aenean sit amet mi sed justo cursus dapibus.</p>
+<ul>
+  <li>Here</li>
+  <li>are</li>
+  <li>some</li>
+  <li>items</li>
+  <li><a href="http://www.google.com">External Link</a></li>
+  <li><a href="http://example.com/example/testdir">Absolute internal link</a></li>
+  <li><a href="/example/testdir">Relative internal link</a></li>
+  <li><a href="testdir">Non-rooted relative internal link</a></li>
+</ul>
+<div class="DonationFormTable">
+
+</div>
+<form action="/submittarget">
+  <input type="submit" id="submitbutton" value="SUBMIT" />
+  <input type="button" id="submit5button" optimizelyValue="500" value="SUBMIT 5" />
+</form>
+<a href="javascript:load_secondary_leftbar('/superstore/virtualshelf.asp?vshelfname=10easy7_20','/Dnet/SecurityGateway.aspx?type=1&RedirectTo=Departments.aspx', 7, '', '');">Link of Doom</a>
+</div>
+<script type="text/javascript">
+  var optimizely = optimizely || [];
+</script>
+</body>
+
+</html>
